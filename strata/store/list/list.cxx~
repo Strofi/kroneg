@@ -1,0 +1,53 @@
+#include <iostream>
+
+template <class T>
+class List
+{
+  struct Node
+  {
+    T value;    
+    Node* next;
+    Node(value):value(value){}
+    Node()=default;
+  }
+
+  List()
+{
+    Node* head = new Node(); 
+    Node* current = head;
+    int size = 0;
+  }
+  ~List()
+  {
+  }
+
+  empty()
+  {
+    return head==nullptr;
+  }
+  
+  size(){return size;}
+
+  push(T element)
+  {
+    current = new Node(element);
+    ++size;
+  }
+
+  T pop()
+  {
+    //TODO    
+  }
+
+  ostream& operator<<(ostream& os, const List& list)
+  {
+    os << "LIST: ";
+    node* iter = head;
+    while(iter!=current)
+      {
+	os<<iter.value;iter = iter->next;
+      }
+    os<<" :END\n";
+  }  
+
+}
